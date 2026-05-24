@@ -1,0 +1,17 @@
+{
+  "language": "ro",
+  "theme": {
+    "bg_main": "#0d0d1a",
+    "bg_panel": "#16213e",
+    "bg_input": "#0f3460",
+    "accent": "#4CAF84",
+    "danger": "#e94560",
+    "text_primary": "#e8e8f0",
+    "text_muted": "#6080a0"
+  },
+  "window": {
+    "width": 1200,
+    "height": 750
+  },
+  "logo_path": ""
+}
