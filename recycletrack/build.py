@@ -52,15 +52,14 @@ def build(onefile: bool = False, clean: bool = False):
 
     # Data files that must ship with the binary
     # Format: source_path:dest_folder_inside_bundle
-    added_data = [
-        f"{APP_DIR / 'modules'}:modules",
-        f"{APP_DIR / 'data'}:data",
-        f"{APP_DIR / 'lang'}:lang",
+    data_specs = [
+        (APP_DIR / 'modules', 'modules'),
+        (APP_DIR / 'data', 'data'),
+        (APP_DIR / 'lang', 'lang'),
     ]
 
-    # On Windows the separator in --add-data is ; not :
-    if sys.platform == "win32":
-        added_data = [d.replace(":", ";") for d in added_data]
+    sep = ';' if sys.platform == 'win32' else ':'
+    added_data = [f"{src}{sep}{dst}" for src, dst in data_specs]
 
     cmd = [
         sys.executable, "-m", "PyInstaller",
