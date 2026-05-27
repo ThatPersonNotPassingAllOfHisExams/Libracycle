@@ -79,7 +79,7 @@ class PANEL_CLASS(ctk.CTkFrame):
         for mat in core.MATERIAL_TYPES:
             kg = totals[mat]
             benefits = eco[mat]
-            labels_map = core.ECO_LABELS[mat]
+            labels_map = core.eco_labels(mat)
 
             card = self._cards[mat]
             card["kg_label"].configure(text=f"{kg:.3f} kg colectat")

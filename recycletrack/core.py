@@ -133,7 +133,7 @@ def remove_material(key: str):
 
 
 # Backwards-compatible alias used by modules
-MATERIAL_TYPES = property(get_material_keys)
+MATERIAL_TYPES = get_material_keys()
 
 
 # ---------------------------------------------------------------------------
